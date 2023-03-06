@@ -26,11 +26,13 @@ public class EnvironmentRenderer : MonoBehaviour
     {
         //clear previous environment
         wallRenderer.material = baseWallMat;
-        if(tempObj) tempObj.SetActive(false);
+        if (_fact.Method.SkyBox) RenderSettings.skybox = baseSkybox;
+        if (tempObj) tempObj.SetActive(false);
         //
 
-   
-        tempObj = GameObject.Find(_fact.Method.objectName);
+        tempObj = _fact.FactObject;
+        tempObj.SetActive(true);
+
         if (_fact.Method.SkyBox) RenderSettings.skybox = _fact.Method.SkyBox;
         if (_fact.Method.WallMat) wallRenderer.material = _fact.Method.WallMat;
     

@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 253955628}
   - component: {fileID: 253955626}
   - component: {fileID: 253955629}
+  - component: {fileID: 253955630}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -326,6 +327,18 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 253955625}
   m_maskType: 0
+--- !u!114 &253955630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253955622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85dd76c3218dd274a8470522545550be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &335705712
 GameObject:
   m_ObjectHideFlags: 0
@@ -344,7 +357,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!135 &335705713
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -649,7 +662,7 @@ GameObject:
   - component: {fileID: 678023564}
   m_Layer: 0
   m_Name: FactManager
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1035,9 +1048,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0558e62ec3f62f43aa261f2d4ed1ad5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fact: This is fact 3
-  method: {fileID: 11400000, guid: 97ccc4870d3e7ed4ea07a15cc935261a, type: 2}
-  sceneChangeDelay: 0
+  <FactMessage>k__BackingField: This is fact 3
+  <Method>k__BackingField: {fileID: 11400000, guid: 97ccc4870d3e7ed4ea07a15cc935261a, type: 2}
+  <FactObject>k__BackingField: {fileID: 2055003363}
+  <SceneChangeDelay>k__BackingField: 0
 --- !u!4 &768952846
 Transform:
   m_ObjectHideFlags: 0
@@ -1226,9 +1240,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0558e62ec3f62f43aa261f2d4ed1ad5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fact: This is fact 1
-  method: {fileID: 11400000, guid: f9e34f282a75fd2479abc5c675127f0e, type: 2}
-  sceneChangeDelay: 0
+  <FactMessage>k__BackingField: This is fact 1
+  <Method>k__BackingField: {fileID: 11400000, guid: f9e34f282a75fd2479abc5c675127f0e, type: 2}
+  <FactObject>k__BackingField: {fileID: 335705712}
+  <SceneChangeDelay>k__BackingField: 0
 --- !u!4 &1004900551
 Transform:
   m_ObjectHideFlags: 0
@@ -1454,7 +1469,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!136 &1402194333
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1832,9 +1847,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0558e62ec3f62f43aa261f2d4ed1ad5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fact: This is fact 2
-  method: {fileID: 11400000, guid: 2fd9a9f84fac35545bfc157e1c792fba, type: 2}
-  sceneChangeDelay: 0
+  <FactMessage>k__BackingField: This is fact 2
+  <Method>k__BackingField: {fileID: 11400000, guid: 2fd9a9f84fac35545bfc157e1c792fba, type: 2}
+  <FactObject>k__BackingField: {fileID: 1402194332}
+  <SceneChangeDelay>k__BackingField: 0
 --- !u!4 &1906220022
 Transform:
   m_ObjectHideFlags: 0
@@ -1868,7 +1884,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!136 &2055003364
 CapsuleCollider:
   m_ObjectHideFlags: 0

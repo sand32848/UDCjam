@@ -6,6 +6,7 @@ public class Fact : MonoBehaviour
 {
     [field: SerializeField] public string FactMessage { get; private set; }
     [field: SerializeField] public FactMethodScriptable Method { get; private set; }
+    [field: SerializeField] public GameObject FactObject { get; private set; }
     [field: SerializeField] public float SceneChangeDelay { get; private set; }
 
 }
