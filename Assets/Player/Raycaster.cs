@@ -6,28 +6,18 @@ using UnityEngine.InputSystem;
 
 public class Raycaster : MonoBehaviour
 {
-    PlayerAction playerAction;
-
     [SerializeField] private float rayRange;
     [SerializeField] private GameObject cam;
     private Interactable currentObject;
 
-    private void Awake()
-    {
-        playerAction = new PlayerAction();
-    }
-    // Update is called once per frame
-
     private void OnEnable()
     {
-        playerAction.Enable();
-        playerAction.Player.Interact.performed += OnInteractPerformed;
+        GlobalInputController.Instance.playerAction.Player.Interact.performed += OnInteractPerformed;
     }
 
     private void OnDisable()
     {
-        playerAction.Enable();
-        playerAction.Player.Interact.performed -= OnInteractPerformed;
+        GlobalInputController.Instance.playerAction.Player.Interact.performed -= OnInteractPerformed;
     }
 
     private void OnInteractPerformed(InputAction.CallbackContext obj)

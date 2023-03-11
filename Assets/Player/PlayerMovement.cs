@@ -6,8 +6,6 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-     PlayerAction playerAction;
-
     [SerializeField] private float moveSpeed;
 
     Vector2 moveVector;
@@ -15,15 +13,13 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
-        playerAction = new PlayerAction();
         characterController = GetComponent<CharacterController>();
     }
 
     private void OnEnable()
     {
-        playerAction.Enable();
-        playerAction.Player.Move.performed += OnMovementPerformed;
-        playerAction.Player.Move.canceled += OnMovementCancle;
+        GlobalInputController.Instance.playerAction.Player.Move.performed += OnMovementPerformed;
+        GlobalInputController.Instance.playerAction.Player.Move.canceled += OnMovementCancle;
     }
 
     private void OnMovementCancle(InputAction.CallbackContext obj)
@@ -33,9 +29,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnDisable()
     {
-        playerAction.Disable();
-        playerAction.Player.Move.performed -= OnMovementPerformed;
-        playerAction.Player.Move.canceled -= OnMovementCancle;
+        GlobalInputController.Instance.playerAction.Player.Move.performed -= OnMovementPerformed;
+        GlobalInputController.Instance.playerAction.Player.Move.canceled -= OnMovementCancle;
     }
 
     private void OnMovementPerformed(InputAction.CallbackContext value)

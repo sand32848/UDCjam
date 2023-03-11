@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnvironmentRenderer : MonoBehaviour
 {
     private FactManager factManager  => GetComponent<FactManager>();
-    [SerializeField] private Renderer wallRenderer;
+    [SerializeField] private List<Renderer> wallRenderers = new List<Renderer>();
     [SerializeField] private Material baseSkyboxMat;
     [SerializeField] private Material baseWallMat;
     [SerializeField] private Material transparentWallMat;
@@ -25,7 +25,7 @@ public class EnvironmentRenderer : MonoBehaviour
     private void loadFactEnvironment(Fact _fact)
     {
         //clear previous environment
-        wallRenderer.material = baseWallMat;
+        wallRenderers.ForEach(x => x.material = baseWallMat);
         if (_fact.Method.SkyBox) RenderSettings.skybox = baseSkybox;
         if (tempObj) tempObj.SetActive(false);
         //
@@ -34,7 +34,7 @@ public class EnvironmentRenderer : MonoBehaviour
         tempObj.SetActive(true);
 
         if (_fact.Method.SkyBox) RenderSettings.skybox = _fact.Method.SkyBox;
-        if (_fact.Method.WallMat) wallRenderer.material = _fact.Method.WallMat;
+        if (_fact.Method.WallMat) wallRenderers.ForEach(x => x.material = _fact.Method.WallMat); 
     
     }
 }

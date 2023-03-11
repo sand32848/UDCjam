@@ -1,3 +1,4 @@
+using Cinemachine;
 using RedBlueGames.Tools.TextTyper;
 using System;
 using System.Collections;
@@ -13,11 +14,26 @@ public class FactManager : MonoBehaviour
 
     public Action<Fact> OnLoadFact;
 
-     public void CallNextFact()
+    private void OnEnable()
+    {
+        ComputerInterface.onQuestionButtonClick += CallNextFact;
+    }
+
+    private void OnDisable()
+    {
+        ComputerInterface.onQuestionButtonClick -= CallNextFact;
+    }
+
+    public void CallNextFact()
     {
         currentFactIndex++;
         currfact = factList[currentFactIndex];
 
         OnLoadFact?.Invoke(currfact);
     }
+
+    //IEnumerator waitFact()
+    //{
+    //    yield return new WaitForSeconds();
+    //}
 }

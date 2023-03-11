@@ -7,8 +7,6 @@ using UnityEngine.InputSystem;
 
 public class PlayerLook : MonoBehaviour
 {
-    PlayerAction playerAction;
-
     [SerializeField] private float mouseSensitivity;
     [SerializeField]private CinemachineVirtualCamera vCam;
 
@@ -18,7 +16,6 @@ public class PlayerLook : MonoBehaviour
 
     private void Awake()
     {
-        playerAction = new PlayerAction();
         body = GetComponent<Transform>();
     }
 
@@ -29,16 +26,14 @@ public class PlayerLook : MonoBehaviour
 
     private void OnEnable()
     {
-        playerAction.Enable();
-        playerAction.Player.Look.performed += OnLookPerformed;
-        playerAction.Player.Look.canceled += OnLookCancled;
+        GlobalInputController.Instance.playerAction.Player.Look.performed += OnLookPerformed;
+        GlobalInputController.Instance.playerAction.Player.Look.canceled += OnLookCancled;
     }
 
     private void OnDisable()
     {
-        playerAction.Disable();
-        playerAction.Player.Look.performed -= OnLookPerformed;
-        playerAction.Player.Look.canceled -= OnLookCancled;
+        GlobalInputController.Instance.playerAction.Player.Look.performed -= OnLookPerformed;
+        GlobalInputController.Instance.playerAction.Player.Look.canceled -= OnLookCancled;
     }
 
     private void OnLookPerformed(InputAction.CallbackContext value)
