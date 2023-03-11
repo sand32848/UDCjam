@@ -11,6 +11,9 @@ public class ComputerManager : MonoBehaviour
     private CinemachineBrain cinemachineBrain => Camera.main.GetComponent<CinemachineBrain>();
     [SerializeField] private float offsetTime;
 
+    [SerializeField] private GameObject questionButton;
+    [SerializeField] private GameObject exitButton;
+
     public void PCinteract()
     {
         StartCoroutine(pcWait());
@@ -25,5 +28,8 @@ public class ComputerManager : MonoBehaviour
         yield return new WaitForSeconds(cinemachineBrain.m_CustomBlends.m_CustomBlends[0].m_Blend.m_Time + offsetTime);
 
         Cursor.lockState = CursorLockMode.None;
+
+        exitButton.SetActive(true);
+        questionButton.SetActive(true);
     }
 }

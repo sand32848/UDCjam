@@ -1591,7 +1591,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1313
+  m_text: Welcome...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2334,7 +2334,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &395229521
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3851,6 +3851,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offsetTime: 0.3
+  questionButton: {fileID: 395229520}
+  exitButton: {fileID: 1545348320}
 --- !u!114 &746362626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7677,7 +7679,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1545348321
 RectTransform:
   m_ObjectHideFlags: 0

@@ -27,6 +27,9 @@ public class ComputerInterface : MonoBehaviour
         GlobalInputController.Instance.playerAction.Enable();
         GlobalCameraController.Instance.CallCam("PlayerCam");
         Cursor.lockState = CursorLockMode.Locked;
+
+        questionButton.gameObject.SetActive(false);
+        exitButton.gameObject.SetActive(false);
     }
 
     public void OnQuestionButtonClick()
